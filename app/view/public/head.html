@@ -1,0 +1,41 @@
+{include file="public/mate" /}
+<body class="index">
+<!-- 顶部开始 -->
+<div class="container">
+    <div class="logo">
+        <a href="./index">YYB.io台账笔记管理</a></div>
+    <div class="left_open">
+        <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
+    </div>
+    <ul class="layui-nav left fast-add" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">+新增</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd>
+                    <a onclick="xadmin.open('培训笔记/填坑贴录入','tk/addnew')">
+                        <i class="iconfont">&#xe6a8;</i>培训笔记/填坑贴录入</a></dd>
+                <dd>
+                    <a onclick="xadmin.open('现金预约录入','xj/add')">
+                        <i class="iconfont">&#xe6a8;</i>现金预约录入</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="layui-nav right" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">admin</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd>
+                    <a onclick="xadmin.open('个人信息','http://www.baidu.com')">个人信息</a></dd>
+                <dd>
+                    <a onclick="xadmin.open('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+                <dd>
+                    <a href="/login">退出</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item to-index">
+            <a href="./index">前台首页</a></li>
+    </ul>
+</div>
+<!-- 顶部结束 -->

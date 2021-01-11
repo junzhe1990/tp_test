@@ -1,0 +1,175 @@
+{include file='/public/X_admin/x_admin_head'}
+<div class="x-nav">
+       <span class="layui-breadcrumb">
+            <a href="">首页</a>
+            <a>
+              <cite>{$cite|default='猜猜是哪里'}</cite></a>
+       </span>
+    <button class="layui-btn layui-btn-sm" style="float: right;" onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh"></i>
+    </button>
+    <button class="layui-btn layui-btn-sm " onclick="xadmin.open('{$titleAdd}','{$urlAdd}')">添加项目</button>
+</div>
+<div class="layui-fluid">
+<!--    数据搜索框-->
+    <div class="layui-card">
+        <div class="layui-card-body ">
+            <form class="layui-form layui-col-space5" action="{$urlSearch|default='/'}" method="post">
+                <div class="layui-input-inline layui-show-xs-block">
+                    <input type="text" name="item" placeholder="请输入核查项目" autocomplete="off" class="layui-input" value="{$map.item}">
+                </div>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <input type="text" name="content" placeholder="请输入核查方法" autocomplete="off" class="layui-input" value="{$map.content}">
+                </div>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <select name="liable">
+                        <option value="">请选择核查人</option>
+                        {volist name='user_name' id='nn'}
+                        <option value="{$nn.name}" {if $nn.name==$map.liable}selected{/if}>{$nn.name}</option>
+                        {/volist}
+                    </select>
+                </div>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <select name="cycle" lay-search="">
+                        <option value="">请选择核查周期</option>
+                        {volist name='cat' id='nn'}
+                        <option value="{$nn.name}" {if $nn.name==$map.cycle}selected{/if}>{$nn.name}</option>
+                        {/volist}
+                    </select>
+                </div>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                        <i class="layui-icon">&#xe615;</i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!--    循环数据-->
+    <div class="layui-collapse">
+        {assign name='empty' value='<span class="text-center text-info">没有相关数据，请更换搜索条件！</span>'}
+        {assign name='empty2' value='<span class="text-center text-info">暂无数据</span>'}
+        {volist name="tab" id="val" empty='$empty'}
+        <div class="layui-colla-item">
+            <!--            标题-->
+            <div class="layui-colla-title">
+                <div class="layui-row">
+                    <div class="layui-col-sm6">
+                        {$val.item}<span class="layui-badge layui-bg-gray">{$val.cycle}</span>
+                    </div>
+                    <div class="layui-col-sm2"><span class="layui-badge layui-bg-blue">{$val.liable}</span></div>
+                    <div class="layui-col-sm1">
+                        <button class="layui-btn layui-btn-xs layui-btn-radius"
+                                onclick="xadmin.open('{$titleEdit}','{$urlEdit}{$val.id}')">
+                            <i class="iconfont">&#xe6b9;</i>记录
+                        </button>
+                    </div>
+                    <div class="layui-col-sm2">
+
+                            <button class="layui-btn layui-btn-sm"
+                                    onclick="xadmin.open('{$titleEdit}','{$urlEdit}{$val.id}')">编辑该项目
+                            </button>
+                            <button class="layui-btn layui-btn-danger layui-btn-sm" onclick="del({$val.id})">删除该项目
+                            </button>
+
+                    </div>
+                </div>
+            </div>
+            <!--            核查要求及核查记录-->
+            <div class="layui-colla-content layui-row">
+                <div class="layui-row">
+                    <div class="layui-col-sm12 layui-text ">
+                        核查方式：{$val.content|raw}
+                        <hr class="layui-bg-blue">
+                    </div>
+                </div>
+                <!--                核查记录-->
+                <div class="layui-row ">
+                    <ul class="layui-timeline">
+
+                        {volist name="val.trackRecords" id="tR" empty='$empty2'}
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis ">&#xe63f;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <div class="layui-row">
+                                    <div class="layui-col-sm9">
+                                        {$tR.check_time}--{$tR.isok}--{$tR.content}----{$tR.user_name}---{$tR.update_time}
+                                    </div>
+                                    <div class="layui-btn-container layui-col-sm3">
+                                        <button class="layui-btn layui-btn-xs layui-bg-cyan layui-btn-radius"
+                                                onclick="xadmin.open('{$titleEdit}','{$urlEdit}{$tR.id}')"><i
+                                                class="iconfont ">&#xe69e;</i></button>
+                                        <button class="layui-btn layui-btn-xs layui-bg-orange layui-btn-radius"
+                                                onclick="del({$tR.id})">
+                                            <i
+                                                    class="iconfont">&#xe69d;</i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+                <!--                    功能模块-->
+                <div class="layui-row">
+                    <div class="layui-col-sm2">
+                        {if $val.recou > 0}
+                        <span class="layui-badge layui-bg-cyan">
+                        {$val.update_time|date="Y-m-d"}
+                        </span>
+                        <span class="layui-badge layui-bg-green">
+                                {$val.recou}
+                        </span>
+                        {else /}
+                        <span class="layui-badge layui-bg-cyan">
+                        {$val.create_time|date="Y-m-d"}
+                        </span>
+                        <span class="layui-badge layui-bg-green">
+                                {$val.recou}
+                        </span>
+                        {/if}
+                    </div>
+                    <div class="layui-col-sm1">
+                        {$val.user_name}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/volist}
+    </div>
+    <div>{$tab|raw}</div>
+</div>
+
+<script>
+    layui.use(['element', 'layer', 'form'], function () {
+        $ = layui.jquery;
+        var element = layui.element,
+            form = layui.form,
+            layer = layui.layer;
+    });
+
+    function del(id) {
+        layer.confirm('确定要删除吗？', {
+            icon: 3,
+            btn: ['确定', '取消']
+        }, function () {
+            $.post('{$urlDel}', {'id': id}, function (code) {
+                if (code === 1) {
+                    layer.alert("删除失败");
+                } else {
+                    layer.alert("删除成功", {
+                            icon: 6
+                        },
+                        function () {
+                            //关闭当前frame
+                            // xadmin.close();
+                            // 可以对父窗口进行刷新
+                            location.reload()
+                            // xadmin.father_reload();
+                        });
+                }
+            }, 'json');
+        });
+    }
+</script>
+
+{include file="public/X_admin/x_admin_foot"}

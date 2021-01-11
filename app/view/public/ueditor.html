@@ -1,0 +1,25 @@
+<!-- 加载编辑器的容器 -->
+<script id="container" name="content" type="text/plain">
+{present name='$tab.content'}
+{notempty name='$tab.content'}
+{$tab.content|raw}
+{/notempty}
+{else/}
+{notempty name='$readyContent'}
+{$readyContent}
+{else/}
+感谢你的每一次编辑，感谢你的时间！
+{/notempty}
+{/present}
+</script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/static/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container',{
+        autoheight:true,
+        emotionLocalization:true
+    });
+</script>

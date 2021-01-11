@@ -1,0 +1,302 @@
+<!-- 左侧菜单开始 -->
+<div class="left-nav">
+    <div id="side-nav">
+        <ul id="nav">
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="填坑笔记管理">&#xe723;</i>
+                    <cite>填坑笔记管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('会计填坑笔记','tk/kj')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>会计业务填坑笔记</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('零售填坑笔记','tk/ls')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>零售业务填坑笔记</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('公共基础填坑笔记','tk/gg')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>公共基础填坑笔记</cite></a>
+                    </li>
+                </ul>
+            </li>
+            <!--            培训笔记-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="培训笔记">&#xe723;</i>
+                    <cite>培训笔记</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('公司业务培训','tk/kjpx')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>公司业务培训</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('零售业务培训','tk/lspx')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>零售业务培训</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('主管有话说','tk/master')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>主管有话说</cite></a>
+                    </li>
+                </ul>
+            </li>
+            <!--            需要解救的问题-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="ICU">&#xe723;</i>
+                    <cite>ICU</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('例外审批','becare/indexofexception')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>例外审批</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('特殊事项审批','becare/indexofspecial')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>特殊事项审批</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('情况说明','becare/indexofoverview')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>情况说明</cite></a>
+                    </li>
+                </ul>
+            </li>
+            <!--            电子台账-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="电子台账">&#xe723;</i>
+                    <cite>电子台账</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe70b;</i>
+                            <cite>代发协议</cite>
+                            <i class="iconfont nav_right">&#xe697;</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a onclick="xadmin.add_tab('代发协议台账','/subs')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>代发协议台账</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('网银渠道减免台账','/subs/reduction')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>网银渠道减免台账</cite></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('等候公示','/now/list')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>等候预期管理</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('协定存款编号台账','/depo/index')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>协定存款编号台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('延伸服务台账','/outr/index')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>延伸服务台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('询证函台账','/inqu/index')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>询证函台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('监管账户台账','/superv/index')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>监管账户台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('支票协议台账','/chec/index')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>支票协议台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('现金预约台账','xj')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>现金预约台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('农民工工资专户台账','/rura')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>农民工工资账户</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('临时户台账','/temp')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>临时户台账</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('手工存款(资信)证明台账','/certify/index')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>手工存款(资信)证明台账</cite></a>
+                    </li>
+                </ul>
+            </li>
+            <!--            考核-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="考核">&#xe723;</i>
+                    <cite>考核</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('总分行项目','/pk/general')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>总分行项目</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('支行项目','/pk/branch')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>支行项目</cite></a>
+                    </li>
+                    <!--                    <li>-->
+                    <!--                        <a onclick="xadmin.add_tab('主管有话说','order-list2.html')">-->
+                    <!--                            <i class="iconfont">&#xe6a7;</i>-->
+                    <!--                            <cite>主管有话说</cite></a>-->
+                    <!--                    </li>-->
+                </ul>
+            </li>
+            <!--            专栏-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="柜面业务专栏">&#xe723;</i>
+                    <cite>柜面业务专栏</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('零售外汇','order-list.html')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>零售外汇</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('零售三方存管','order-list1.html')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>零售三方存管</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('代发代扣','order-list2.html')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>代发代扣</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('司法专窗','order-list2.html')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>司法专窗</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('私行相关','order-list2.html')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>私行相关</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('香港一卡通','order-list2.html')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>香港一卡通</cite></a>
+                    </li>
+                </ul>
+            </li>
+            <!--            开放融合-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="零售公司学习笔记">&#xe723;</i>
+                    <cite>零售公司学习笔记</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('理专知识分享','/retai/Financial')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>理财知识分享</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('服务专员知识分享','/retai/service')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>服务专员知识分享</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('无贷户经营','/retai/noLoan')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>无贷户经营</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('热门理财产品一览','/retai/popular')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>热门理财产品一览</cite></a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('市场经理知识分享','/retai/market')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>市场经理知识分享</cite></a>
+                    </li>
+
+                </ul>
+            </li>
+            <!--            人员管理-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="人员管理">&#xe726;</i>
+                    <cite>人员管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('管理员列表','/admin/list')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>管理员列表</cite></a>
+                    </li>
+                </ul>
+            </li>
+<!--            质检要点-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="质检要点">&#xe6b6;</i>
+                    <cite>质检要点</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('质检要点','/quality')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>质检要点</cite></a>
+                    </li>
+                </ul>
+            </li>
+<!--            追光者-->
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont left-nav-li" lay-tips="追光者">&#xe6b1;</i>
+                    <cite>追光者</cite>
+                    <i class="iconfont nav_right">&#xe697;</i></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a onclick="xadmin.add_tab('追光者-做自己的太阳','/tracking')">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>追光者</cite></a>
+                    </li>
+<!--                    <li>-->
+<!--                        <a onclick="xadmin.add_tab('追光者-做自己的太阳','/tracking')">-->
+<!--                            <i class="iconfont">&#xe6a7;</i>-->
+<!--                            <cite>追光者</cite></a>-->
+<!--                    </li>-->
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- <div class="x-slide_left"></div> -->
+<!-- 左侧菜单结束 -->
